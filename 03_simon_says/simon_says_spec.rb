@@ -11,7 +11,7 @@
 # When you make the second `repeat` test pass, you might break the **first**
 #
 
-require "simon_says"
+require_relative "simon_says"
 
 describe "Simon says" do
   describe "echo" do
@@ -62,6 +62,7 @@ describe "Simon says" do
       start_of_word(s, 1).should == "a"
       start_of_word(s, 2).should == "ab"
       start_of_word(s, 3).should == "abc"
+      start_of_word(s, 20).should == s
     end
   end
 

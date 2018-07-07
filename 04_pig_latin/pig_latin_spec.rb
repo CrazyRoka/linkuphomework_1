@@ -17,7 +17,7 @@
 #
 #
 
-require "pig_latin"
+require_relative "pig_latin"
 
 describe "#translate" do
 
@@ -68,5 +68,15 @@ describe "#translate" do
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
+
+  it "translates capitalized words" do
+    s = translate("The Quick brown Fox")
+    expect(s).to eq( "Ethay Ickquay ownbray Oxfay")
+  end
+
+  it "retain the punctuation from the original phrase" do
+    s = translate("The Quick brown Fox!")
+    expect(s).to eq( "Ethay Ickquay ownbray Oxfay!")
+  end
 
 end

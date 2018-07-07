@@ -8,7 +8,7 @@
 # N.B.: Rspec has changed how it expresses matching:
 # [Matchers] ( https://relishapp.com/rspec/rspec-expectations/v/3-5/docs/built-in-matchers/be-matchers )
 
-require 'dictionary'
+require_relative 'dictionary'
 
 describe Dictionary do
   before do

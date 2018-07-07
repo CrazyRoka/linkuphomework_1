@@ -115,7 +115,7 @@
 #
 
 
-require "hello"
+require_relative "hello"
 
 
 

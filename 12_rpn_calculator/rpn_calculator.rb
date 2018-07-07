@@ -40,7 +40,7 @@ class RPNCalculator
   end
 
   def tokens(expression)
-    expression.split.map {|value| value.to_i.to_s == value ? value.to_i : value.to_sym }
+    expression.split.map { |value| value.to_i.to_s == value ? value.to_i : value.to_sym }
   end
 
   def evaluate(expression)

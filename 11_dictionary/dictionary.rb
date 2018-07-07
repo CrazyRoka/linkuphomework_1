@@ -4,11 +4,8 @@ class Dictionary
   end
 
   def add(entry)
-    if entry.is_a? Hash
-      @entries.merge!(entry)
-    else
-      @entries[entry] = nil
-    end
+    entry = {entry => nil} unless entry.is_a? Hash
+    @entries.merge!(entry)
   end
 
   def include?(key)

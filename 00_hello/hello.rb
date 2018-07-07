@@ -1,5 +1,3 @@
-require "rspec"
-
 def hello
   "Hello!"
 end

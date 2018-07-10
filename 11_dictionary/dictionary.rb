@@ -1,10 +1,12 @@
 class Dictionary
+  attr_reader :entries
+
   def initialize(dictionary = {})
     @entries = dictionary
   end
 
   def add(entry)
-    entry = {entry => nil} unless entry.is_a? Hash
+    entry = { entry => nil } unless entry.is_a? Hash
     @entries.merge!(entry)
   end
 
@@ -13,15 +15,11 @@ class Dictionary
   end
 
   def find(prefix)
-    @entries.select { |key, value| key =~ /^#{prefix}/ }
+    @entries.select { |key| key =~ /^#{prefix}/ }
   end
 
   def keywords
     @entries.keys.sort
-  end
-
-  def entries
-    @entries
   end
 
   def printable

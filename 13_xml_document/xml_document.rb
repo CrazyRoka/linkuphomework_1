@@ -4,23 +4,7 @@ class XmlDocument
     @padding_level = 0
   end
 
-  def hello(args = {}, &block)
-    send("hello", args, &block)
-  end
-
-  def goodbye(args = {}, &block)
-    send("goodbye", args, &block)
-  end
-
-  def come_back(args = {}, &block)
-    send("come_back", args, &block)
-  end
-
-  def ok_fine(args = {}, &block)
-    send("ok_fine", args, &block)
-  end
-
-  def send(name, args = {}, &block)
+  def method_missing(name, args = {}, &block)
     @padding_level += 2
     answer = if block
                prefix = create_open_tag(name)
@@ -50,7 +34,8 @@ class XmlDocument
   end
 
   def create_open_tag(name, args = {})
-    "<#{name}" + args.map {|key, value| " #{key}='#{value}'"}.join() + ">"
+    attributes = args.map { |key, value| " #{key}='#{value}'" }.join
+    "<#{name}#{attributes}>"
   end
 
   def create_close_tage(name)

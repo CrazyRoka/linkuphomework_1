@@ -1,11 +1,11 @@
 def reverser
-  yield.gsub(/\b\w+\b/) { |word| word.reverse }
+  yield.gsub(/\w+/) { |word| word.reverse }
 end
 
 def adder(value = 1)
   yield + value
 end
 
-def repeater(number_of_repetitions = 1)
-  number_of_repetitions.times { yield }
+def repeater(repetitions_number = 1)
+  repetitions_number.times { yield }
 end

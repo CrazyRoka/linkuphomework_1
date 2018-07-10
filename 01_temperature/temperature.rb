@@ -1,7 +1,7 @@
-def ftoc(temperature)
-  (temperature - 32.0) / 9.0 * 5.0
+def ftoc(fahrenheit)
+  (fahrenheit - 32) / 9.0 * 5.0
 end
 
-def ctof(temperature)
-  temperature * 9.0 / 5.0 + 32.0
+def ctof(celsius)
+  celsius * 9.0 / 5.0 + 32
 end

@@ -1,12 +1,6 @@
 class Temperature
   def initialize(options = {})
-    @temperature = if options.include? :f
-      ftoc(options[:f])
-    elsif options.include? :c
-      options[:c]
-    else
-      0
-    end
+    @temperature = options[:c] || ftoc(options[:f])
   end
 
   def in_fahrenheit

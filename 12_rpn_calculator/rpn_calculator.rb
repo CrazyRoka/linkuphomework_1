@@ -10,7 +10,7 @@ class RPNCalculator
   end
 
   def perform_operation(operation)
-    raise "calculator is empty" if @stack.size < 2
+    raise 'calculator is empty' if @stack.size < 2
     number = @stack.pop
     @stack[-1] = @stack[-1].send(operation, number.to_f)
     @value = @stack[-1]

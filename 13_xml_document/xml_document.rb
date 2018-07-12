@@ -11,7 +11,6 @@ class XmlDocument
              else
                create_empty_tag(name, args) + (@padding ? "\n" : '')
              end
-
     @padding_level -= 2
     answer
   end

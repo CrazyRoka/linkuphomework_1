@@ -34,14 +34,6 @@ class Celsius < Temperature
   def initialize(temperature)
     @temperature = temperature
   end
-
-  def in_celsius
-    @temperature
-  end
-
-  def in_fahrenheit
-    ctof(@temperature)
-  end
 end
 
 class Fahrenheit < Temperature
